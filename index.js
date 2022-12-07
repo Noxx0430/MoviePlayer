@@ -49,7 +49,8 @@ $(".menu").on("click", function(){
 $(".url").on("change", function(){
     const cl = Number($(this).prop("outerHTML").substr(33, 1));
     const url = $(this).val();
-    const id1 = url.replace(/.*shorts\/(.*)/, "$1");
+    const id11 = url.replace(/.*shorts\/(.*)/, "$1");
+    const id1 = id11.replace(/.*youtu\.be\/(.*)/, "$1");
     const id = id1.replace(/.*v=(.*)/, "$1");
     localStorage.setItem("url" + cl +"", url);
     $(".iframe" + cl +"").remove();
